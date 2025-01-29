@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Red clock</title>
+    <link rel="stylesheet" type="text/css" href="Red clock style.css">
+    <link rel="icon" href="../Endo engel.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fasthand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c87b82238a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="moving-text">
+            <span class="title">//Red clock//</span>
+        </div>
+    </div>
+    <div id="background">
+        <div class="clock-1">
+            <h1 id="time"></h1>
+            <div id="date"></div>
+            <div id="dayOfWeek"></div> 
+        </div>
+        <div class="clock">
+            <span id="title-timer">Temporizador</span>
+            <div>
+                <input type="number" id="hoursInput" placeholder="00">
+                <span class="dos-puntos">:</span>
+                <input type="number" id="minutesInput" placeholder="00">
+                <span class="dos-puntos">:</span>
+                <input type="number" id="secondsInput" placeholder="00">
+            </div>
+            <div id="buttons-timer">
+                <button id="startCountdown"><i class="fas fa-play"></i></button>
+                <button id="stopCountdown" onclick="stopCountdown()" class="hidden"><i class="fa-solid fa-pause"></i></button>
+                <button id="resetCountdown" onclick="resetCountdown()" class="hidden"><i class="fa-solid fa-stop"></i></button>
+                <button id="stopAlarm" class="hidden" onclick="stopAlarm()">Detener alarma</button>
+                <audio id="alarmSound" src="Alarma.mp3" loop></audio>
+            </div>
+        </div>
+        <div class="clock-2">
+            <span id="title-stopwatch">Cronometro</span>
+            <div class="stopwatch">
+                <span id="stopwatchDisplay">00:00:00</span>
+                <div class="buttons-stopwatch">
+                    <button id="startStopwatch" onclick="startStopwatch()"><i class="fas fa-play"></i></button>
+                    <button id="stopStopwatch" onclick="stopStopwatch()"><i class="fa-solid fa-pause"></i></button>
+                    <button id="resetStopwatch" onclick="resetStopwatch()"><i class="fa-solid fa-stop"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Red clock script.js"></script>
+</body>
+</html>

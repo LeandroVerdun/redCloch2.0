@@ -1,0 +1,231 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./Angel_background2.PNG');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  height: 100vh; 
+  margin: 0; 
+}
+.container {
+  background: #800;
+  height: 80px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-top: -50px;
+  transform: translateX(100%);
+  animation: slideBackground 0.6s linear forwards;
+}
+
+ @keyframes slideBackground {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.moving-text {
+  font-family: 'Fasthand', cursive;
+
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  height: 85px;
+  padding: 0;
+  margin: 0;
+  margin-top: -9px ;
+  margin-left: -10px;
+  margin-right: 10px ;
+  overflow: hidden;
+  font-size: 80px;
+  color: #000;
+  opacity: 0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity:1; }
+  50%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.title {
+  font-family: 'Fasthand', cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: moveText 12s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+  padding-right: 100%;
+  font-size: 50px;
+  margin-top: 5px;
+}
+
+@keyframes moveText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+
+
+#background {
+  height: calc(90vh - 80px);
+  width: 70%;
+  border: 1px solid #bbb;
+  border-top: none;
+
+}
+
+.clock-1 {
+  background: linear-gradient(#000c, #fff7) ;
+  width: 35%;
+  height: 20%;
+  border: 5px solid #ccc;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+
+#time {
+  margin-bottom: 10px;
+  color: #000;
+  -webkit-text-stroke: 1px #fff;
+}
+
+#date {
+  color: #fff;
+  margin: auto;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+#time {
+  font-size: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.clock, .clock-1, .clock-2 {
+  background: linear-gradient(#000c, #fff7) ;
+  width: 35%;
+  height: 23%;
+  border: 5px solid #ccc;
+  margin: auto;
+  margin-top: 50px;
+  border-radius: 20px;
+
+}
+
+
+
+
+#hoursInput, #minutesInput, #secondsInput {
+  background: transparent;
+  height: 50px;
+  width: 80px;
+  border: none;
+  color: #000;
+  font-size: 50px;
+  -webkit-text-stroke: 1px #fff;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+
+}
+
+
+#hoursInput:focus, #minutesInput:focus, #secondsInput:focus {
+  outline: none;
+
+}
+
+#hoursInput::placeholder, #minutesInput::placeholder, #secondsInput::placeholder {
+  color: #000;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
+#startCountdown, #stopCountdown, #resetCountdown {
+  margin-top: 15px;
+}
+
+i {
+  color: #000;
+  font-size: 25px;
+  -webkit-text-stroke: 1px #fff
+
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+  height: 25px;
+  width: 60px;
+  
+}
+
+#stopAlarm {
+  border: 2px solid #fff;
+  background: linear-gradient(#000e, #fffc);
+  width: 150px;
+  height: 40px;
+  color: #aaa;
+  font-size: 15px;
+}
+
+#title-timer, #stopwatchDisplay, #title-stopwatch {
+  color: #000;
+  font-size: 35px;
+  -webkit-text-stroke: 1px #fff;
+  margin-top: 10px;
+}
+
+
+.dos-puntos {
+  font-size: 35px;
+  -webkit-text-stroke: 1px #fff
+
+}
+
+
+#stopwatchDisplay {
+  margin-bottom: 10px;
+  color: #000;
+  -webkit-text-stroke: 1px #fff;
+
+}
+
+
+.buttons-stopwatch {
+  margin-top: 20px;
+}
+
+
+.title {
+  font-size: 50px;
+}
+
+#dayOfWeek {
+  font-size: 40px;
+  color: #fff;
+  margin: 0%;
+  padding: 0%;
+  margin-top: -18px;
+}
