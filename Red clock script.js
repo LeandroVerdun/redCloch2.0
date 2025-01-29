@@ -1,14 +1,14 @@
-var countdownInterval;
-var countdownSeconds = 0;
-var stopwatchInterval;
-var stopwatchSeconds = 0;
-var alarmSound = document.getElementById('alarmSound');
+let countdownInterval;
+let countdownSeconds = 0;
+let stopwatchInterval;
+let stopwatchSeconds = 0;
+let alarmSound = document.getElementById('alarmSound');
 
 
 function updateCountdownDisplay() {
-  var hours = Math.floor(countdownSeconds / 3600).toString().padStart(2, '0');
-  var minutes = Math.floor((countdownSeconds % 3600) / 60).toString().padStart(2, '0');
-  var seconds = Math.floor(countdownSeconds % 60).toString().padStart(2, '0');
+  let hours = Math.floor(countdownSeconds / 3600).toString().padStart(2, '0');
+  let minutes = Math.floor((countdownSeconds % 3600) / 60).toString().padStart(2, '0');
+  let seconds = Math.floor(countdownSeconds % 60).toString().padStart(2, '0');
 
   document.getElementById('hoursInput').value = hours;
   document.getElementById('minutesInput').value = minutes;
@@ -49,25 +49,25 @@ function updateButtonVisibility(running) {
   }
 }
 
-var stop = document.getElementById('stopAlarm');
+let stop = document.getElementById('stopAlarm');
 stop.addEventListener('click', function() {
 	showButton('startCountdown')
 	hideButton('stopAlarm')
 	
 });
 
-var reset = document.getElementById('resetCountdown');
+let reset = document.getElementById('resetCountdown');
 reset.addEventListener('click', function() {
 	showButton('startCountdown')
 	hideButton('stopAlarm')
 
 })
 
-var start = document.getElementById('startCountdown')
+let start = document.getElementById('startCountdown')
 start.addEventListener('click', function(){
-  var hoursInput = document.getElementById('hoursInput').value;
-  var minutesInput = document.getElementById('minutesInput').value;
-  var secondsInput = document.getElementById('secondsInput').value;
+  let hoursInput = document.getElementById('hoursInput').value;
+  let minutesInput = document.getElementById('minutesInput').value;
+  let secondsInput = document.getElementById('secondsInput').value;
 
   minutesInput = parseInt(minutesInput || 0);
   secondsInput = parseInt(secondsInput || 0);
@@ -78,13 +78,13 @@ start.addEventListener('click', function(){
   }
 
   if (minutesInput > 59) {
-    var extraHours = Math.floor(minutesInput / 60);
+    let extraHours = Math.floor(minutesInput / 60);
     hoursInput = (parseInt(hoursInput) || 0) + extraHours;
     minutesInput = minutesInput % 60;
   }
 
   if (secondsInput > 59) {
-    var extraMinutes = Math.floor(secondsInput / 60);
+    let extraMinutes = Math.floor(secondsInput / 60);
     minutesInput = minutesInput + extraMinutes;
     secondsInput = secondsInput % 60;
   }
@@ -141,9 +141,9 @@ function stopAlarm() {
 
 
 function updateStopwatchDisplay() {
-  var hours = Math.floor(stopwatchSeconds / 3600).toString().padStart(2, '0');
-  var minutes = Math.floor((stopwatchSeconds % 3600) / 60).toString().padStart(2, '0');
-  var seconds = Math.floor(stopwatchSeconds % 60).toString().padStart(2,'0')
+  let hours = Math.floor(stopwatchSeconds / 3600).toString().padStart(2, '0');
+  let minutes = Math.floor((stopwatchSeconds % 3600) / 60).toString().padStart(2, '0');
+  let seconds = Math.floor(stopwatchSeconds % 60).toString().padStart(2,'0')
 
   document.getElementById('stopwatchDisplay').textContent = hours + ':' + minutes + ':' + seconds;
 }
@@ -183,20 +183,20 @@ function resetStopwatch() {
 
 
 function updateTime() {
-  var now = new Date();
-  var hours = now.getHours();
-  var minutes = now.getMinutes();
-  var seconds = now.getSeconds();
-  var day = now.getDate().toString().padStart(2, '0');
-  var month = (now.getMonth() + 1).toString().padStart(2, '0');
-  var year = now.getFullYear();
+  let now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  let day = now.getDate().toString().padStart(2, '0');
+  let month = (now.getMonth() + 1).toString().padStart(2, '0');
+  let year = now.getFullYear();
 
 
-  var daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-  var dayOfWeek = daysOfWeek[now.getDay()]; 
+  let daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+  let dayOfWeek = daysOfWeek[now.getDay()]; 
 
-  var dateString = day + '/' + month + '/' + year;
-  var timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
+  let dateString = day + '/' + month + '/' + year;
+  let timeString = hours.toString().padStart(2, '0') + ':' + minutes.toString().padStart(2, '0') + ':' + seconds.toString().padStart(2, '0');
 
   document.getElementById('date').textContent = dateString;
   document.getElementById('time').textContent = timeString;
